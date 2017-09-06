@@ -2,6 +2,7 @@ package ch.ethz.matsim.mode_choice.run;
 
 import java.util.Iterator;
 
+import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.population.Person;
 import org.matsim.core.config.Config;
@@ -38,6 +39,8 @@ public class RunModeChoiceController {
 
 		Scenario scenario = ScenarioUtils.loadScenario(config);
 		Controler controler = new Controler(scenario);
+		
+		scenario.getPopulation().getPersons().remove(Id.createPersonId("1014572500"));
 
 		/*Iterator<? extends Person> personIterator = scenario.getPopulation().getPersons().values().iterator();
 
